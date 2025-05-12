@@ -23,8 +23,8 @@ use nom::{
 /// 9. Checksum
 ///
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-#[derive(Debug, PartialEq)]
+#[cfg_attr(feature = "defmt-03", derive(defmt::Format))]
+#[derive(Debug, Clone, Copy, PartialEq)]
 pub struct GstData {
     #[cfg_attr(feature = "defmt", defmt(Debug2Format))]
     pub time: Option<NaiveTime>,

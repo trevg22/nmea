@@ -28,8 +28,8 @@ use crate::{Error, ParseResult, SentenceType, parse::NmeaSentence};
 ///
 /// Example: `$SDDBK,1330.5,f,0405.5,M,0221.6,F*2E`
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-#[derive(Debug, PartialEq)]
+#[cfg_attr(feature = "defmt-03", derive(defmt::Format))]
+#[derive(Debug, Clone, Copy, PartialEq)]
 pub struct DbkData {
     pub depth_feet: Option<f64>,
     pub depth_meters: Option<f64>,

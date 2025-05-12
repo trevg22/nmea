@@ -18,8 +18,8 @@ use crate::{Error, SentenceType, parse::NmeaSentence};
 /// $--MWV,x.x,a,x.x,a*hh<CR><LF>
 /// ```
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-#[derive(Debug, PartialEq)]
+#[cfg_attr(feature = "defmt-03", derive(defmt::Format))]
+#[derive(Debug, Clone, Copy, PartialEq)]
 pub struct MwvData {
     pub wind_direction: Option<f32>,
     pub reference: Option<MwvReference>,

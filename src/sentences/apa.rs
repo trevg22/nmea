@@ -46,8 +46,8 @@ use crate::{Error, SentenceType, parse::NmeaSentence, sentences::utils::array_st
 /// Where the last "M" is the waypoint name
 ///
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-#[derive(Debug, PartialEq, Clone)]
+#[cfg_attr(feature = "defmt-03", derive(defmt::Format))]
+#[derive(Debug, Clone, Copy, PartialEq)]
 pub struct ApaData {
     pub status_warning: Option<bool>,
     pub status_cycle_warning: Option<bool>,

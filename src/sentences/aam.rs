@@ -32,8 +32,8 @@ use crate::{Error, SentenceType, parse::NmeaSentence, sentences::utils::array_st
 /// WPTNME is the waypoint name.
 /// ```
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-#[derive(Debug, PartialEq)]
+#[cfg_attr(feature = "defmt-03", derive(defmt::Format))]
+#[derive(Debug, Clone, Copy, PartialEq)]
 pub struct AamData {
     pub arrival_circle_entered: Option<bool>,
     pub perpendicular_passed: Option<bool>,
