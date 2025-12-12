@@ -41,6 +41,7 @@ num-traits = { version = "0.2", default-features = false, features = ["libm"] }
 cfg-if = "1"
 serde = { version = "1.0", default-features = false, optional = true }
 serde_with = { version = "~3.11", default-features = false, optional = true }
+schemars = {version="1.1.0",default-features=false,optional=true,features=["std","derive","chrono04","preserve_order"]}
 
 defmt = { version = "1", optional = true }
 document-features = { version = "0.2", optional = true }
@@ -66,7 +67,7 @@ serde = [
     "chrono/serde", 
     "arrayvec/serde"
 ]
-
+schemars=["dep:schemars"]
 ## Enable derives of `defmt@1.0` formatting for embedded platforms
 defmt = ["dep:defmt", "heapless/defmt"]
 

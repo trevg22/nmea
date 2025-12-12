@@ -14,6 +14,7 @@ use crate::{
 
 use super::{FaaMode, faa_mode::parse_faa_mode, utils::parse_magnetic_variation};
 
+#[cfg_attr(feature = "schemars", derive(schemars::JsonSchema))]
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
@@ -23,6 +24,7 @@ pub enum RmcStatusOfFix {
     Invalid,
 }
 
+#[cfg_attr(feature = "schemars", derive(schemars::JsonSchema))]
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
@@ -76,6 +78,7 @@ pub enum RmcNavigationStatus {
 /// 13. Nav Status (NMEA 4.1 and later)
 ///     `A` = autonomous, `D` = differential, `E` = Estimated,
 ///     `M` = Manual input mode, `N` = not valid, `S` = Simulator, `V` = Valid
+#[cfg_attr(feature = "schemars", derive(schemars::JsonSchema))]
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Debug, Clone, Copy, PartialEq)]
